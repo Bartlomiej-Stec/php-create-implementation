@@ -1,5 +1,5 @@
 # PHP create implementation
-A Visual Studio Code extension for implementing all required methods. When called from an interface or abstract class, it will create a new file with the implementation. When called from an implementation, it will check if all required methods are implemented, add any missing methods, and add any missing use namespaces."
+A Visual Studio Code extension for implementing all required methods. When called from an interface or abstract class, it will create a new file with the implementation. When called from an implementation, it will check if all required methods are implemented, add any missing methods, and add any missing use namespaces.
 
 ## Usage
 
