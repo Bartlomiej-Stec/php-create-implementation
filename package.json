@@ -4,7 +4,7 @@
   "publisher": "Just4Devs",
   "description": "An extension for creating implementations of interfaces and abstract classes in PHP",
   "icon": "images/logo.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.94.0"
   },
@@ -40,7 +40,24 @@
       "title": "TypeScript",
       "properties": {
         "php-create-implementation.expressionsNameFromInterface": {
-          "type": "object[]",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "regex": {
+                "type": "string",
+                "description": "A regular expression to match part of the interface name."
+              },
+              "replacement": {
+                "type": "string",
+                "description": "The string that will replace the matched part of the interface name."
+              }
+            },
+            "required": [
+              "regex",
+              "replacement"
+            ]
+          },
           "default": [
             {
               "regex": "Interface",
@@ -51,17 +68,34 @@
               "replacement": ""
             }
           ],
-          "description": "Regular expressions to replace parts of the interface name."
+          "description": "An array of objects that define regular expressions and their replacements for transforming the interface name."
         },
         "php-create-implementation.expressionsNameFromAbstract": {
-          "type": "object[]",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "regex": {
+                "type": "string",
+                "description": "A regular expression to match part of the abstract class name."
+              },
+              "replacement": {
+                "type": "string",
+                "description": "The string that will replace the matched part of the abstract class name."
+              }
+            },
+            "required": [
+              "regex",
+              "replacement"
+            ]
+          },
           "default": [
             {
               "regex": "Abstract",
               "replacement": ""
             }
           ],
-          "description": "Regular expressions to replace parts of the abstract class name."
+          "description": "An array of objects that define regular expressions and their replacements for transforming the abstract class name."
         },
         "php-create-implementation.implementedClassPrefix": {
           "type": "string",
