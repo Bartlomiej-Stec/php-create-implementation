@@ -3,8 +3,8 @@ A Visual Studio Code extension for implementing all required methods. When calle
 
 ## Usage
 
-To implement missing methods in the currently open file, use the shortcut **Alt** + **I** or the command: **Implement all possible methods**.
-![Usage gif](./images/usage.gif)
+To implement missing methods in the currently open file, use the shortcut ```Alt + I``` or the command: ```Implement all possible methods```.
+![Usage gif](https://raw.githubusercontent.com/Bartlomiej-Stec/php-create-implementation/main/images/usage.gif)
 
 ## Advanced configuration
 By default, when creating a file for an implementation, the **Service** suffix is added to the name. For interfaces, the **Interface** suffix and the **I** prefix are removed if followed by an uppercase letter. 
