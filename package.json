@@ -4,12 +4,21 @@
   "publisher": "Just4Devs",
   "description": "An extension for creating implementations of interfaces and abstract classes in PHP",
   "icon": "images/logo.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.94.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages",
+    "Formatters"
+  ],
+  "keywords": [
+    "php",
+    "interface",
+    "implement",
+    "implementation",
+    "abstract",
+    "create"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -94,5 +103,9 @@
   },
   "dependencies": {
     "php-parser": "^3.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bartlomiej-Stec/php-create-implementation.git"
   }
 }
