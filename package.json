@@ -1,0 +1,98 @@
+{
+  "name": "php-create-implementation",
+  "displayName": "PHP create implementation",
+  "publisher": "Just4Devs",
+  "description": "An extension for creating implementations of interfaces and abstract classes in PHP",
+  "icon": "images/logo.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "php-create-implementation.implementAll",
+        "title": "Implement all possible methods"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "php-create-implementation.implementAll",
+        "key": "alt+i",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "TypeScript",
+      "properties": {
+        "php-create-implementation.expressionsNameFromInterface": {
+          "type": "object[]",
+          "default": [
+            {
+              "regex": "Interface",
+              "replacement": ""
+            },
+            {
+              "regex": "(?<![a-z])(?<=^|[a-z])I(?=[A-Z])",
+              "replacement": ""
+            }
+          ],
+          "description": "Regular expressions to replace parts of the interface name."
+        },
+        "php-create-implementation.expressionsNameFromAbstract": {
+          "type": "object[]",
+          "default": [
+            {
+              "regex": "Abstract",
+              "replacement": ""
+            }
+          ],
+          "description": "Regular expressions to replace parts of the abstract class name."
+        },
+        "php-create-implementation.implementedClassPrefix": {
+          "type": "string",
+          "default": "",
+          "description": "Prefix added to the created implementation."
+        },
+        "php-create-implementation.implementedClassSuffix": {
+          "type": "string",
+          "default": "Service",
+          "description": "Suffix added to the created implementation."
+        },
+        "php-create-implementation.curlyBracketSameLine": {
+          "type": "boolean",
+          "default": false,
+          "description": "Determines whether the brace { should start on the same line as the function."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.11.1",
+    "mocha": "^10.7.3",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "php-parser": "^3.1.5"
+  }
+}
