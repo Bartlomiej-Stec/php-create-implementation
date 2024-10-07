@@ -32,7 +32,7 @@
     "keybindings": [
       {
         "command": "php-create-implementation.implementAll",
-        "key": "alt+i",
+        "key": "alt+u",
         "when": "editorTextFocus"
       }
     ],

@@ -3,7 +3,7 @@ A Visual Studio Code extension for implementing all required methods. When calle
 
 ## Usage
 
-To implement missing methods in the currently open file, use the shortcut ```Alt + I``` or the command: ```Implement all possible methods```.
+To implement missing methods in the currently open file, use the shortcut ```Alt + U``` or the command: ```Implement all possible methods```.
 ![Usage gif](https://raw.githubusercontent.com/Bartlomiej-Stec/php-create-implementation/main/images/usage.gif)
 
 ## Advanced configuration
