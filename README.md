@@ -6,6 +6,9 @@ A Visual Studio Code extension for implementing all required methods. When calle
 To implement missing methods in the currently open file, use the shortcut ```Alt + U``` or the command: ```Implement all possible methods```.
 ![Usage gif](https://raw.githubusercontent.com/Bartlomiej-Stec/php-create-implementation/main/images/usage.gif)
 
+## Limitations
+The extension is designed to work with projects that use Composer, especially for Laravel. Each class or interface must be stored in a separate file; otherwise, some features may not work correctly.
+
 ## Advanced configuration
 By default, when creating a file for an implementation, the **Service** suffix is added to the name. For interfaces, the **Interface** suffix and the **I** prefix are removed if followed by an uppercase letter. 
 

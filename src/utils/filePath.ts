@@ -42,6 +42,7 @@ async function findFilePathsByNamespaces(namespaces: string[], currentFilePath: 
     const resolvedPaths: string[] = [];
 
     let dir = path.dirname(currentFilePath);
+    const rootDir = path.parse(dir).root;
     while (dir !== path.parse(dir).root) {
         try {
             const stat = await fs.stat(path.join(dir, 'composer.json'));
@@ -52,8 +53,12 @@ async function findFilePathsByNamespaces(namespaces: string[], currentFilePath: 
         }
         dir = path.dirname(dir);
     }
+    if (dir === rootDir) {
+        throw new Error('composer.json not found in the directory tree.');
+    }
 
     const composerPath = path.join(dir, 'composer.json');
+    
     const composerContent = await fs.readFile(composerPath, 'utf-8');
 
     const composerJson = JSON.parse(composerContent);

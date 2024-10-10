@@ -4,6 +4,10 @@ All notable changes to the "php-create-implementation" extension will be documen
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [v0.0.7] - 10.10.2024
 
-- Initial release
+### Changed
+- README file updated
+
+### Fixed
+- Error message when composer not exists added

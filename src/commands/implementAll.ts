@@ -68,10 +68,12 @@ const completeImplementation = (codeInfo: ParsedCode, fileCode: string, implemen
     const namespaces: string[] = [];
     implementedStructures.forEach((implementedStructure: string) => {
         const namespace = findNamespaceFromString(codeInfo.useStatements, implementedStructure);
+        if(namespace.name === '' && !codeInfo.namespace){
+            return;
+        }
         const namespacePath = namespace.name === '' ? codeInfo.namespace + '\\' + implementedStructure : namespace.name;
         namespaces.push(namespacePath);
     });
-
     const currentFilePath = editor.document.uri.fsPath;
     findFilePathsByNamespaces(namespaces, currentFilePath)
         .then(filePaths => {
@@ -141,6 +143,7 @@ const generate = (): void => {
     if (parsedCode.length === 0) {
         throw new Error('There is nothing to implement');
     }
+    
     parsedCode.forEach((codeInfo: ParsedCode) => {
         if (codeInfo.isInterface) {
             generateInterfaceImplementation(codeInfo);
