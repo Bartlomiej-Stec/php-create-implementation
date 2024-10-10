@@ -2,7 +2,10 @@
 
 All notable changes to the "php-create-implementation" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [v0.0.8] - 10.10.2024
+
+### Fixed
+- Adding the same namespace multiple times in specific situations.
 
 ## [v0.0.7] - 10.10.2024
 

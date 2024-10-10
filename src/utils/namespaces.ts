@@ -57,13 +57,17 @@ const getMissingUseStatements = (methods: ClassMethod[], useStatements: UseState
 
     const missingHints = hints.filter(hint => !useStatementExists(hint, useStatements));
     const namespaces: UseStatement[] = [];
+    const uniqueNamespaces = new Set<string>(); 
     missingHints.forEach(hint => {
         const namespace = findNamespaceFromString(parentUseStatements, hint);
         const lastPart = getNamespaceLastPart(namespace.name);
-        if (hint === namespace.alias || lastPart === hint) {
+        const uniqueIdentifier = `${namespace.name}::${namespace.alias}`;
+        if ((hint === namespace.alias || lastPart === hint) && !uniqueNamespaces.has(uniqueIdentifier)) {
+            uniqueNamespaces.add(uniqueIdentifier);
             namespaces.push(namespace);
         }
     });
+    
     return namespaces;
 };
 
